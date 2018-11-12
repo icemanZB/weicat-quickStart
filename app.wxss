@@ -1,4 +1,5 @@
 /**app.wxss**/
+/* 全局样式，所有文件都会生效 */
 .container {
   height: 100%;
   display: flex;

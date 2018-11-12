@@ -1,12 +1,31 @@
 {
-  "pages":[
+  "pages": [
     "pages/index/index",
-    "pages/logs/logs"
+    "pages/logs/logs",
+    "pages/movie/movie"
   ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color":"#707070",
+    "selectedColor":"#1296db",
+    "list": [
+      {
+        "text": "首页",
+        "pagePath": "pages/index/index",
+        "iconPath":"common/img/mang.png",
+        "selectedIconPath": "common/img/mang_color.png"
+      },
+      {
+        "text": "日志",
+        "pagePath": "pages/logs/logs",
+        "iconPath": "common/img/delete.png",
+        "selectedIconPath": "common/img/delete_color.png"
+      }
+    ]
   }
 }
