@@ -1,13 +1,19 @@
 //index.js
-//获取应用实例
-const app = getApp()
+// 通过 getApp 全局函数获取应用实例
+const app = getApp();
+
+console.log(app.globalData);
 
 Page({
+  pData: {
+    pVar: 2
+  },
   data: {
-    motto: 'Hello World',
+    motto: 'Hello,World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    color: 'red'
   },
   //事件处理函数
   bindViewTap: function() {
@@ -15,13 +21,16 @@ Page({
       url: '../logs/logs'
     })
   },
-  onLoad: function () {
+  onLoad: function() {
+    // this 可以访问到当前页面的实例
+    console.log(this.pData);
+
     if (app.globalData.userInfo) {
       this.setData({
         userInfo: app.globalData.userInfo,
         hasUserInfo: true
       })
-    } else if (this.data.canIUse){
+    } else if (this.data.canIUse) {
       // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
       // 所以此处加入 callback 以防止这种情况
       app.userInfoReadyCallback = res => {
@@ -50,5 +59,19 @@ Page({
       userInfo: e.detail.userInfo,
       hasUserInfo: true
     })
+  },
+
+  onTap(ev) {
+    let {
+      currentTarget,
+      target
+    } = ev;
+    // currentTarget 触发事件的组件
+    // target 触发组件原 ( 点击<text>，target 的 id 就是 "Text" )，由于事件冒泡 onTap 依然被执行
+    console.log(ev);
+
+    this.setData({
+      motto: 'Ice,man'
+    });
   }
 })

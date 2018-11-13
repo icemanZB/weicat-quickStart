@@ -1,6 +1,7 @@
 <!--logs.wxml-->
 <view class="container log-list">
-  <block wx:for="{{logs}}" wx:for-item="log">
+<!-- wx:key="*this" *this 在 for 循环中 代表的是 item 本身 -->
+  <block wx:for="{{logs}}" wx:for-item="log" wx:key="{{index}}">
     <text class="log-item">{{index + 1}}. {{log}}</text>
   </block>
 </view>

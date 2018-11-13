@@ -1,1 +1,5 @@
-{}
+{
+  "usingComponents":{
+    "component-num":"/pages/component/num/num"
+  }
+}

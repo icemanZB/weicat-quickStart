@@ -1,13 +1,24 @@
 <!--index.wxml-->
+
+<!-- import 有作用域的概念，使用相对路径，也可以使用 <include src="" /> 引入一串结构 -->
+<import src="template.wxml" />
+
 <view class="container">
   <view class="userinfo">
     <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
+    <!-- block 并不是一个真正的组件，并不会渲染在页面上。他是辅助条件渲染多个节点 -->
     <block wx:else>
       <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
       <text class="userinfo-nickname">{{userInfo.nickName}}</text>
     </block>
   </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
-  </view>
+
+  <template is="userInfo" data="{{motto}}"></template>
+
+  <navigator url="/pages/movie/movie">去视频页面</navigator>
+
+  <!-- 阻止事件冒泡需要使用 catch:tap="onTap" -->
+  <view bind:tap="onTap" class="press-btn" id="View" data-name="容器"><text style="color:{{color}}" id="Text" data-name="文字">点击我可以打印信息</text></view>
+
+  <component-num></component-num>
 </view>

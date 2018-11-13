@@ -1,6 +1,10 @@
 //app.js
+// 1.注册 App，只需要注册一次
+// 会得到一个程序的实例，可以被其他页面访问
 App({
-  onLaunch: function () {
+  // 小程序启用的时候执行，在小程序运行期间只会运行一次，
+  // 程序销毁( 过了一段时间没有运行，或手动删除了小程序在次添加运行 )之后，再次启动就会执行
+  onLaunch: function() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
@@ -32,6 +36,14 @@ App({
         }
       }
     })
+  },
+  // 每次在后台切换过来，就会执行
+  onShow(){
+    console.log('切换到小程序运行了');
+  },
+  // 每次切换到后台就会执行
+  onHide(){
+    console.log('小程序被隐藏在后台运行');
   },
   globalData: {
     userInfo: null

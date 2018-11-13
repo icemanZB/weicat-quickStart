@@ -11,13 +11,13 @@
     "navigationBarTextStyle": "black"
   },
   "tabBar": {
-    "color":"#707070",
-    "selectedColor":"#1296db",
+    "color": "#707070",
+    "selectedColor": "#1296db",
     "list": [
       {
         "text": "首页",
         "pagePath": "pages/index/index",
-        "iconPath":"common/img/mang.png",
+        "iconPath": "common/img/mang.png",
         "selectedIconPath": "common/img/mang_color.png"
       },
       {
@@ -27,5 +27,6 @@
         "selectedIconPath": "common/img/delete_color.png"
       }
     ]
-  }
+  },
+  "debug": false
 }

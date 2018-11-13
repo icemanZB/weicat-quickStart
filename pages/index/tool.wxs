@@ -1,0 +1,7 @@
+// WXS（WeiXin Script）是小程序的一套脚本语言，结合 WXML，可以构建出页面的结构。并不是js( 没有es6 )
+
+function createStr(str) {
+  return str.split(',');
+}
+
+module.exports = createStr;
