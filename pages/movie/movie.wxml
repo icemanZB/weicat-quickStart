@@ -1,1 +1,2 @@
-<text>pages/movie/movie.wxml</text>
+<text>movie</text>
+<navigator url="/pages/about/about">about</navigator>

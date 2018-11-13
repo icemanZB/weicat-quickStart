@@ -7,7 +7,8 @@ App({
   onLaunch: function() {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
+    logs.unshift(Date.now());
+    // 同步
     wx.setStorageSync('logs', logs)
 
     // 登录

@@ -1,2 +1,2 @@
 <!--pages/component/num/num.wxml-->
-<text>pages/component/num/num.wxml</text>
+<text bind:tap="onTap">当前页面{{numIn}}{{num}}</text>

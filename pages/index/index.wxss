@@ -30,7 +30,7 @@ page {
 }
 
 .usermotto {
-  margin-top: 100rpx;
+  margin-top: 50rpx;
 }
 
 .press-btn {
